@@ -27,9 +27,5 @@ module FriendlyId
     #  person = Person.exists?(['name = ?', 'joe'])
     #
     # @see FriendlyId::ObjectUtils
-    def exists?(id = nil)
-      return super if id.unfriendly_id?
-      super @klass.friendly_id_config.query_field => id
-    end
   end
 end
